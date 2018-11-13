@@ -9,8 +9,14 @@
         <canvas 
             width="800px"
             height="600px"
-            style="background-color: white; border: 2px solid #869a88;">
+            style="display: block; background-color: white; border: 2px solid #869a88;">
         </canvas>
+        <button id="start">Start</button>
+        <button id="stop" style="display: none;">Stop</button>
+        <label for="speed">Speed (<span id="speedNb">1</span>)</label>
+        <input type="range" id="speed" value="1" min="1" max="20" step="1">
+        <label>Generation: <span id="generation">0</span></label>
+        <button id="clear">Clear</button>
         <script charset="utf-8" src="js/app.js"></script>
     </body>
 </html>
