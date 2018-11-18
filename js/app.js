@@ -12,7 +12,8 @@ var cvs,
     speedInput,
     interval,
     generationText,
-    speedText;
+    speedText,
+    playing = false;
 
 window.addEventListener("load", start());
 
@@ -45,9 +46,14 @@ function clearGrid(){
 
 function speedHandler(){
     speedText.innerText = speedInput.value;
+    if(playing) {
+        stopGame();
+        startGame();
+    }
 }
 
 function startGame(){
+    playing = true;
     speed = speedInput.value; 
     if(speed > 20)
         speed = 20;
@@ -57,6 +63,7 @@ function startGame(){
 }
 
 function stopGame(){
+    playing = false;
     stopBtn.style.display = 'none';
     startBtn.style.display = '';
     clearInterval(interval);
